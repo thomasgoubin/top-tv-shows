@@ -8,9 +8,11 @@
   "scripts": {
     "install-backend": "cd backend-ts && npm install --no-audit --no-fund",
     "build-backend": "cd backend-ts && npm run build",
+    "install-frontend": "cd frontend && npm install --no-audit --no-fund --legacy-peer-deps --force",
+    "build-frontend": "cd frontend && npm run build",
     "postinstall": "npm run install-backend && npm run build-backend",
     "start": "cd backend-ts && node dist/index.js",
-    "build-frontend-locally": "cd frontend && npm install && NODE_OPTIONS=--max_old_space_size=4096 npm run build"
+    "prepare-frontend-locally": "cd frontend && npm install && npm run build && cd .. && mkdir -p backend-ts/public && cp -r frontend/build/* backend-ts/public/"
   },
   "repository": {
     "type": "git",

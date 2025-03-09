@@ -2,38 +2,60 @@
 
 Une application pour afficher les séries populaires sur différentes plateformes de streaming.
 
-## Déploiement sur Railway via GitHub
+## ⚠️ Configuration à deux environnements
 
-⚠️ **Important** : En raison des limitations de mémoire sur Railway, le frontend doit être construit localement avant le déploiement.
+Cette application utilise deux configurations différentes :
+- **Mode développement local** : Utilise React Scripts 5.0.1 compatible avec Node.js récent
+- **Mode production Railway** : Utilise React Scripts 4.0.3 compatible avec Node.js 16 de Railway
 
-### Étape 1 : Construire le frontend localement
+## Développement local
 
-```bash
-# Dans le dossier racine du projet
-npm run build-frontend-locally
+### 1. Passer en mode développement
+
+```powershell
+.\switch-env.ps1 dev
 ```
 
-### Étape 2 : Copier les fichiers statiques
+Ce script va :
+- Configurer le frontend pour le développement local
+- Installer les dépendances nécessaires
 
-Après avoir construit le frontend, copiez le contenu du dossier `frontend/build` dans le dossier `backend-ts/public`.
+### 2. Démarrer le backend
 
 ```bash
-# Créer le dossier public s'il n'existe pas
-mkdir -p backend-ts/public
-
-# Copier les fichiers du build
-cp -r frontend/build/* backend-ts/public/
+cd backend-ts
+npm install
+npm run dev
 ```
 
-### Étape 3 : Committer les fichiers compilés
+### 3. Démarrer le frontend (dans un autre terminal)
 
 ```bash
-git add backend-ts/public
-git commit -m "Add compiled frontend static files"
+cd frontend
+npm start
+```
+
+## Déploiement sur Railway
+
+### 1. Passer en mode production
+
+```powershell
+.\switch-env.ps1 prod
+```
+
+Ce script va :
+- Configurer le frontend pour être compatible avec Node.js 16 de Railway
+- Préparer les fichiers pour le déploiement
+
+### 2. Committer les changements
+
+```bash
+git add .
+git commit -m "Prêt pour déploiement Railway"
 git push origin main
 ```
 
-### Étape 4 : Déployer sur Railway
+### 3. Déployer sur Railway
 
 1. Connectez-vous à [Railway](https://railway.app/)
 2. Créez un nouveau projet et sélectionnez "Deploy from GitHub repo"
@@ -42,23 +64,15 @@ git push origin main
    - `RAPID_API_KEY` : Votre clé API Streaming Availability
    - `NODE_ENV` : `production`
 
-## Développement local
+## Précompilation locale du frontend (alternative)
 
-### Backend
+Si vous rencontrez des problèmes lors du déploiement sur Railway, vous pouvez précompiler le frontend localement :
 
-```bash
-cd backend-ts
-npm install
-npm run dev
+```powershell
+.\clean-and-rebuild.ps1
 ```
 
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
+Puis committez le dossier `backend-ts/public` qui contient les fichiers statiques compilés.
 
 ## Fonctionnalités
 
