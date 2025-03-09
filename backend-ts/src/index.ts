@@ -16,19 +16,16 @@ const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL || true
-    : 'http://localhost:3000'
-}));
+app.use(cors());
 
 // API routes
 app.use('/api', showsRoutes);
 
-// Serve static files from the frontend build folder in production
+// In production, serve the static files from the React frontend build
 if (process.env.NODE_ENV === 'production') {
+  // Serve static files from the React frontend app
   app.use(express.static(path.join(__dirname, '../../frontend/build')));
-  
+
   // Handle any requests that don't match the above
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));

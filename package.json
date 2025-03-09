@@ -1,0 +1,22 @@
+{
+  "name": "top-tv-shows",
+  "version": "1.0.0",
+  "description": "Top TV Shows application with React frontend and Express backend",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "install-backend": "cd backend-ts && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "build-backend": "cd backend-ts && npm run build",
+    "build-frontend": "cd frontend && NODE_OPTIONS=--max_old_space_size=2048 npm run build",
+    "postinstall": "npm run install-backend && npm run install-frontend && npm run build-frontend && npm run build-backend",
+    "start": "cd backend-ts && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasgoubin/top-tv-shows.git"
+  },
+  "author": "",
+  "license": "MIT"
+} 

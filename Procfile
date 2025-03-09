@@ -1,0 +1,1 @@
+web: cd backend-ts && node dist/index.js 
