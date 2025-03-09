@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-03-09T09:43:56.149Z",
+  "shows": [
+    {
+      "ImdbId": "tt18923754",
+      "Title": "Daredevil: Born Again",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Daredevil%3A+Born+Again&width=720&direction=vertical",
+      "ImdbRating": "50",
+      "Overview": "",
+      "Genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ]
+    },
+    {
+      "ImdbId": "tt26748649",
+      "Title": "High Potential",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://cdn.movieofthenight.com/show/9884309/poster/vertical/en/720.jpg?Expires=1758870657&Signature=Y6cOezcbk1AauQ8GBSHAnZ-uvetXLlAiWVAiLG03qbvc6n9C1BOVWS7O-BuTwTP8hcnsZCQ-C-FJVjwcm-Rzy0hsKuNPdiGMKscdM31R7N7uDgauvAn34ZjS4Nn~IDsYSDQnJJnglVfFVNtpH2iBYi7HYoEVG7qJ0txwZb0hJtzPw8ygK0ZIRm0QN4NxXRvIeKcmm8p7lLI-3gP03yvs537PlsHTTXsWr9tmevzt~TjKOnOc7TENGlac~RQFNR0U1nbQcX1XQiAvJMLr5vwUwgJ9~Ws5dq2AK~5En3d5mp4qOgFg6g0gVaPa~E1QkQvGHsEA9ZFQp-Wi5GJJ~1kydQ__&Key-Pair-Id=KK4HN3OO4AT5R",
+      "ImdbRating": "71",
+      "Overview": "Morgan, a single mom with three kids and an exceptional mind, helps solve an unsolvable crime when she rearranges some evidence during her shift as a cleaner for the police department. When they discover she has a knack for putting things in order because of her high intellectual potential, she is brought on as a consultant to work with a by-the-book seasoned detective, Karadec. Together they form an unusual and unstoppable team.",
+      "Genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ]
+    },
+    {
+      "ImdbId": "tt27444205",
+      "Title": "Paradise",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Paradise&width=720&direction=vertical",
+      "ImdbRating": "64",
+      "Overview": "Tranquility explodes when a shocking murder occurs and a high-stakes investigation unfolds.",
+      "Genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "ImdbId": "tt13624052",
+      "Title": "Win or Lose",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Win+or+Lose&width=720&direction=vertical",
+      "ImdbRating": "50",
+      "Overview": "",
+      "Genres": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ]
+    }
+  ]
+}

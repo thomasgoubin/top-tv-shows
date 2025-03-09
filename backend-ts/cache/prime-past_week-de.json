@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-03-09T09:43:50.735Z",
+  "shows": [
+    {
+      "ImdbId": "tt33204697",
+      "Title": "Secret Level",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Secret+Level&width=720&direction=vertical",
+      "ImdbRating": "73",
+      "Overview": "SECRET LEVEL is a new adult animated anthology series featuring original stories set within the worlds of some of the world’s most beloved video games. From the creative minds behind LOVE, DEATH + ROBOTS, each of the 15 episodes is a celebration of games and gamers.",
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Animation"
+      ]
+    },
+    {
+      "ImdbId": "tt16463942",
+      "Title": "The Discounters",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=The+Discounters&width=720&direction=vertical",
+      "ImdbRating": "63",
+      "Overview": "",
+      "Genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "ImdbId": "tt11794812",
+      "Title": "Cross",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Cross&width=720&direction=vertical",
+      "ImdbRating": "72",
+      "Overview": "Based on NY Times Bestselling author James Patterson’s #1 hero, Cross is a crime thriller that follows the investigations of brilliant forensic psychologist and DC Metro Detective Alex Cross. Together with his best friend and partner Detective John Sampson, Cross delves into the psyches of America’s most insidious killers while fighting to protect his family from the dangers of the criminal world",
+      "Genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ]
+    },
+    {
+      "ImdbId": "tt19636984",
+      "Title": "The Sticky",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=The+Sticky&width=720&direction=vertical",
+      "ImdbRating": "61",
+      "Overview": "The Sticky is a comedy-drama series about Ruth Landry, a maple syrup farmer who, in defiance of a heartless system, assembles a team to undertake the Canadian heist of the century. The target: the country’s multi-million dollar maple syrup surplus.",
+      "Genres": [
+        "Comedy",
+        "Crime"
+      ]
+    },
+    {
+      "ImdbId": "tt9813792",
+      "Title": "FROM",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://cdn.movieofthenight.com/show/1979/poster/vertical/en/720.jpg?Expires=1766862985&Signature=I7HxuFojOMfdtYHCVqIdQaWr4-qDIj427jBK6dcqdj7-4sLfMahkYnV-O~8sDlCBgBzD~JOKfPsLr75NB1VXm4qJsscbvEGHy5sJNQXlnKly9gTM00HmWXJ2YaA8G4sSbNZLGsa3MR3bu4taLlBp4HQs5kqXqVWMyRSIlawSJZxpSX-M04Nn4d22-pSSKElRLWOJq3AoQAwCkUJo1l4bFDLM3n8J4QIhWsvltPnzu7phGV2Vdv-Lcs9NpMI4BH53g1NpC7nVzChGVK-tpMxlyWPT15cvXb0RIg9w37xMHoBhuAArr14rtSC12pUHxVW3vLnnn7tHfmczY5h3JQ-w~A__&Key-Pair-Id=KK4HN3OO4AT5R",
+      "ImdbRating": "78",
+      "Overview": "From the executive producers of Lost, From unravels the mystery of a nightmarish town that traps all those who enter. As the unwilling residents search for a way out, they must also survive the terrifying creatures that come out at night.",
+      "Genres": [
+        "Drama",
+        "Horror",
+        "Mystery"
+      ]
+    }
+  ]
+}

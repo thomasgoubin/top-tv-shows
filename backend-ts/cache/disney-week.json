@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-03-09T09:39:37.047Z",
+  "shows": [
+    {
+      "ImdbId": "tt18923754",
+      "Title": "Daredevil: Born Again",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Daredevil%3A+Born+Again&width=720&direction=vertical",
+      "ImdbRating": "50",
+      "Overview": "",
+      "Genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ]
+    },
+    {
+      "ImdbId": "tt13624052",
+      "Title": "Win or Lose",
+      "Year": "",
+      "Type": "series",
+      "ImageUrl": "https://www.movieofthenight.com/media/image.svg?title=Win+or+Lose&width=720&direction=vertical",
+      "ImdbRating": "50",
+      "Overview": "",
+      "Genres": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ]
+    }
+  ]
+}

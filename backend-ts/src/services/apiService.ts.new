@@ -1,0 +1,79 @@
+import axios from 'axios';
+import { Show } from '../models/types';
+
+const API_HOST = 'streaming-availability.p.rapidapi.com';
+const API_BASE_URL = 'https://streaming-availability.p.rapidapi.com';
+
+/**
+ * Fetch shows from the Streaming Availability API
+ */
+export async function fetchShows(platform: string, timeframe: string): Promise<Show[]> {
+  const rapidApiKey = process.env.RAPID_API_KEY;
+  
+  if (!rapidApiKey) {
+    throw new Error('RAPID_API_KEY environment variable is not set');
+  }
+  
+  // Map timeframe to API parameters
+  let sortBy = '';
+  switch (timeframe) {
+    case 'day':
+      sortBy = 'popularity_1day';
+      break;
+    case 'week':
+      sortBy = 'popularity_1week';
+      break;
+    case 'past_week':
+      sortBy = 'popularity_2week'; 
+      break;
+    case 'month':
+      sortBy = 'popularity_1month';
+      break;
+    case 'year':
+      sortBy = 'popularity_1year';
+      break;
+    default:
+      sortBy = 'popularity_1week';
+  }
+  
+  try {
+    console.log(`Fetching shows for ${platform}, sorted by ${sortBy}`);
+    
+    // Using the proper endpoint based on the API documentation
+    const response = await axios({
+      method: 'GET',
+      url: `${API_BASE_URL}/search/filters`,
+      params: {
+        type: 'series',
+        order_by: sortBy,
+        country: 'us',
+        catalogs: platform,
+        output_language: 'en',
+        limit: '20'
+      },
+      headers: {
+        'X-RapidAPI-Key': rapidApiKey,
+        'X-RapidAPI-Host': API_HOST
+      }
+    });
+    
+    console.log("API response status:", response.status);
+    
+    if (response.data && response.data.shows) {
+      console.log(`Received ${response.data.shows.length} shows from API`);
+      return response.data.shows;
+    }
+    
+    console.warn("API returned data but not in expected format:", response.data);
+    return [];
+    
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('API Error details:', error.response?.data || 'No response data');
+      console.error('API Error status:', error.response?.status);
+      console.error('API Error headers:', error.response?.headers);
+      throw new Error(`API request failed: ${error.response?.status} ${error.response?.statusText}`);
+    }
+    throw new Error(`API request failed: ${error}`);
+  }
+} 
