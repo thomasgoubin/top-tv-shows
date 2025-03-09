@@ -4,12 +4,12 @@
   "description": "Backend API for Top TV Shows application",
   "main": "dist/index.js",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "build": "tsc",
+    "build": "tsc --pretty --verbose",
     "postinstall": "npm run build"
   },
   "keywords": [
