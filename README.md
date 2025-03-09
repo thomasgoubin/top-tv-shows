@@ -1,78 +1,6 @@
-# Top TV Shows Application
+# Top TV Shows
 
-Une application pour afficher les séries populaires sur différentes plateformes de streaming.
-
-## ⚠️ Configuration à deux environnements
-
-Cette application utilise deux configurations différentes :
-- **Mode développement local** : Utilise React Scripts 5.0.1 compatible avec Node.js récent
-- **Mode production Railway** : Utilise React Scripts 4.0.3 compatible avec Node.js 16 de Railway
-
-## Développement local
-
-### 1. Passer en mode développement
-
-```powershell
-.\switch-env.ps1 dev
-```
-
-Ce script va :
-- Configurer le frontend pour le développement local
-- Installer les dépendances nécessaires
-
-### 2. Démarrer le backend
-
-```bash
-cd backend-ts
-npm install
-npm run dev
-```
-
-### 3. Démarrer le frontend (dans un autre terminal)
-
-```bash
-cd frontend
-npm start
-```
-
-## Déploiement sur Railway
-
-### 1. Passer en mode production
-
-```powershell
-.\switch-env.ps1 prod
-```
-
-Ce script va :
-- Configurer le frontend pour être compatible avec Node.js 16 de Railway
-- Préparer les fichiers pour le déploiement
-
-### 2. Committer les changements
-
-```bash
-git add .
-git commit -m "Prêt pour déploiement Railway"
-git push origin main
-```
-
-### 3. Déployer sur Railway
-
-1. Connectez-vous à [Railway](https://railway.app/)
-2. Créez un nouveau projet et sélectionnez "Deploy from GitHub repo"
-3. Sélectionnez votre dépôt GitHub
-4. Configurez les variables d'environnement :
-   - `RAPID_API_KEY` : Votre clé API Streaming Availability
-   - `NODE_ENV` : `production`
-
-## Précompilation locale du frontend (alternative)
-
-Si vous rencontrez des problèmes lors du déploiement sur Railway, vous pouvez précompiler le frontend localement :
-
-```powershell
-.\clean-and-rebuild.ps1
-```
-
-Puis committez le dossier `backend-ts/public` qui contient les fichiers statiques compilés.
+Application pour découvrir les séries TV populaires sur différentes plateformes de streaming.
 
 ## Fonctionnalités
 
@@ -83,14 +11,71 @@ Puis committez le dossier `backend-ts/public` qui contient les fichiers statique
 - Détails des séries avec notes IMDb
 - Liens vers IMDb et Rotten Tomatoes
 
-## Features
+## Développement local
 
-- Browse top TV shows from Netflix, Prime Video, Disney+, HBO, Hulu, Apple TV+, and Paramount+
-- Filter shows by timeframe: today, this week, past week, past month, past year
-- View show details including posters, summaries, and IMDb ratings
-- Efficient caching system to minimize API calls
-- Manual refresh button to control when to update data
-- Responsive design for all device sizes
+### Installation
+
+```bash
+# Installer toutes les dépendances
+npm run install:all
+```
+
+### Démarrage rapide
+
+```bash
+# Démarrer le backend et le frontend en une commande (Windows)
+.\dev.ps1
+
+# OU démarrer le frontend et le backend séparément
+npm run dev:backend  # Dans un terminal
+npm run dev:frontend # Dans un autre terminal
+```
+
+### Accès à l'application
+
+- Frontend: http://localhost:3000
+- API Backend: http://localhost:8080/api/shows
+
+## Déploiement sur Railway
+
+1. **Créer un projet sur Railway**
+   - Se connecter à [Railway](https://railway.app/)
+   - Créer un nouveau projet en utilisant l'option "Deploy from GitHub repo"
+   - Sélectionner le dépôt GitHub
+
+2. **Configurer les variables d'environnement**
+   - `RAPID_API_KEY` : Votre clé API Streaming Availability
+   - `NODE_ENV` : `production`
+
+3. **Déployer**
+   - Railway détectera automatiquement le projet et déploiera l'application
+
+## Structure du projet
+
+- `frontend/` : Application React
+- `backend-ts/` : API Node.js/Express avec TypeScript
+- `package.json` : Scripts pour le projet global
+
+## Commandes disponibles
+
+```bash
+# Démarrage en production
+npm start
+
+# Développement
+npm run dev:backend  # Démarrer le backend en mode dev
+npm run dev:frontend # Démarrer le frontend en mode dev
+
+# Build
+npm run build        # Build du backend et frontend
+npm run build:backend
+npm run build:frontend
+
+# Installation
+npm run install:all
+npm run install:backend
+npm run install:frontend
+```
 
 ## Technologies
 

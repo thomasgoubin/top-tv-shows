@@ -17,14 +17,18 @@ app.use(cors());
 // API routes
 app.use('/api', showsRoutes);
 
-// Serve static files from the public directory (prebuilt frontend)
-const publicPath = path.join(__dirname, '../public');
-app.use(express.static(publicPath));
-
-// Handle any requests that don't match the above
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-});
+// En production: servir les fichiers statiques du frontend
+if (process.env.NODE_ENV === 'production') {
+  const frontendBuildPath = path.join(__dirname, '../../frontend/build');
+  app.use(express.static(frontendBuildPath));
+  
+  // Pour toute autre requête, renvoyer l'index.html
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
+  });
+  
+  console.log('Serving frontend from:', frontendBuildPath);
+}
 
 // Start server
 app.listen(PORT, () => {

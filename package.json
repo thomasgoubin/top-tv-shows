@@ -6,13 +6,16 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "install-backend": "cd backend-ts && npm install --no-audit --no-fund",
-    "build-backend": "cd backend-ts && npm run build",
-    "install-frontend": "cd frontend && npm install --no-audit --no-fund --legacy-peer-deps --force",
-    "build-frontend": "cd frontend && npm run build",
-    "postinstall": "npm run install-backend && npm run build-backend",
-    "start": "cd backend-ts && node dist/index.js",
-    "prepare-frontend-locally": "cd frontend && npm install && npm run build && cd .. && mkdir -p backend-ts/public && cp -r frontend/build/* backend-ts/public/"
+    "start": "cd backend-ts && npm start",
+    "dev:backend": "cd backend-ts && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build:backend": "cd backend-ts && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "postinstall": "npm run install:all && npm run build",
+    "install:backend": "cd backend-ts && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend"
   },
   "repository": {
     "type": "git",

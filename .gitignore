@@ -3,9 +3,12 @@ node_modules/
 /.pnp
 .pnp.js
 
-# Production
+# Fichiers de build sauf ceux du dossier public de backend
 /frontend/build
 /backend-ts/dist
+
+# Ne pas ignorer les fichiers frontend précompilés
+!/backend-ts/public
 
 # Environnement
 .env
