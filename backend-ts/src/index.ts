@@ -3,13 +3,9 @@ import cors from 'cors';
 import path from 'path';
 import dotenv from 'dotenv';
 import showsRoutes from './routes/showsRoutes';
-import { initCache } from './services/cacheService';
 
 // Load environment variables
 dotenv.config();
-
-// Initialize cache
-initCache();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -21,16 +17,14 @@ app.use(cors());
 // API routes
 app.use('/api', showsRoutes);
 
-// In production, serve the static files from the React frontend build
-if (process.env.NODE_ENV === 'production') {
-  // Serve static files from the React frontend app
-  app.use(express.static(path.join(__dirname, '../../frontend/build')));
+// Serve static files from the public directory (prebuilt frontend)
+const publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
 
-  // Handle any requests that don't match the above
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));
-  });
-}
+// Handle any requests that don't match the above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 // Start server
 app.listen(PORT, () => {

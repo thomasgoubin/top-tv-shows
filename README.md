@@ -1,6 +1,73 @@
-# Top TV Shows Dashboard
+# Top TV Shows Application
 
-A comprehensive web application that displays top TV shows from major streaming platforms with information about ratings, descriptions, and links to IMDb.
+Une application pour afficher les séries populaires sur différentes plateformes de streaming.
+
+## Déploiement sur Railway via GitHub
+
+⚠️ **Important** : En raison des limitations de mémoire sur Railway, le frontend doit être construit localement avant le déploiement.
+
+### Étape 1 : Construire le frontend localement
+
+```bash
+# Dans le dossier racine du projet
+npm run build-frontend-locally
+```
+
+### Étape 2 : Copier les fichiers statiques
+
+Après avoir construit le frontend, copiez le contenu du dossier `frontend/build` dans le dossier `backend-ts/public`.
+
+```bash
+# Créer le dossier public s'il n'existe pas
+mkdir -p backend-ts/public
+
+# Copier les fichiers du build
+cp -r frontend/build/* backend-ts/public/
+```
+
+### Étape 3 : Committer les fichiers compilés
+
+```bash
+git add backend-ts/public
+git commit -m "Add compiled frontend static files"
+git push origin main
+```
+
+### Étape 4 : Déployer sur Railway
+
+1. Connectez-vous à [Railway](https://railway.app/)
+2. Créez un nouveau projet et sélectionnez "Deploy from GitHub repo"
+3. Sélectionnez votre dépôt GitHub
+4. Configurez les variables d'environnement :
+   - `RAPID_API_KEY` : Votre clé API Streaming Availability
+   - `NODE_ENV` : `production`
+
+## Développement local
+
+### Backend
+
+```bash
+cd backend-ts
+npm install
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+## Fonctionnalités
+
+- Affichage des séries populaires par plateforme (Netflix, Prime, Disney+, etc.)
+- Filtrage par période (jour, semaine, mois, année)
+- Filtrage par pays
+- Mode sombre
+- Détails des séries avec notes IMDb
+- Liens vers IMDb et Rotten Tomatoes
 
 ## Features
 
@@ -56,17 +123,6 @@ A comprehensive web application that displays top TV shows from major streaming 
 
 4. Open your browser and navigate to http://localhost:3000
 
-## Deployment
-
-This project is configured for easy deployment to Railway:
-
-1. Push your code to a GitHub repository
-2. Connect Railway to your GitHub repository
-3. Create a new project from the repository
-4. Add the environment variable:
-   - `RAPID_API_KEY=your_rapidapi_key_here`
-5. Deploy the project
-
 ## API Usage Notes
 
 - The Streaming Availability API is limited to 1000 calls per month on the free tier
@@ -81,4 +137,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [Movie of the Night](https://github.com/movieofthenight/go-streaming-availability) for the Streaming Availability API
-- All streaming services for providing their content # top-tv-shows
+- All streaming services for providing their content

@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ['nodejs@18']
+
+[phases.install]
+cmds = ['npm install --no-audit --prefer-offline --production=false']
+
+[phases.build]
+cmds = ['NODE_OPTIONS=--max_old_space_size=2048 npm run build']
+
+[start]
+cmd = 'npx serve -s build' 
