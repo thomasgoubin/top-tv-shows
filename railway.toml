@@ -9,12 +9,5 @@ healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
 
-[nixpacks]
-nixPkgs = ['nodejs_18']
-
-[nixpacks.variables]
-NODE_VERSION = "18"
-NODE_ENV = "production"
-
 [nixpacks.build.env]
 NODE_OPTIONS = "--max_old_space_size=2048" 

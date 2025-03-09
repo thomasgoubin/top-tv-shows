@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Top TV Shows application with React frontend and Express backend",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
-    "install-backend": "cd backend-ts && npm install --no-audit --no-fund --omit=dev",
+    "install-backend": "cd backend-ts && npm install --no-audit --no-fund",
     "build-backend": "cd backend-ts && npm run build",
     "postinstall": "npm run install-backend && npm run build-backend",
     "start": "cd backend-ts && node dist/index.js",
